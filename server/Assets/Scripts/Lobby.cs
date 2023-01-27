@@ -14,7 +14,13 @@ public class Lobby : MonoBehaviourPunCallbacks
     private int roomSize;
     private bool connected;
     private bool starting;
+    public InputField Field;
+    //public Text nickname;
 
+    private void Start()
+    {
+        PhotonNetwork.ConnectUsingSettings();
+    }
     public override void OnConnectedToMaster()
     {
         PhotonNetwork.AutomaticallySyncScene = true;
@@ -30,6 +36,7 @@ public class Lobby : MonoBehaviourPunCallbacks
             {
                 starting = true;
                 buttonText.text = "Starting Game. Click Again to Cancel";
+                Debug.Log(Field.text);
                 PhotonNetwork.JoinRandomRoom(); // attempt joining a room
             }
             else
@@ -41,6 +48,11 @@ public class Lobby : MonoBehaviourPunCallbacks
         }
         else
             Debug.Log("Not connected to server!");
+    }
+    public void Gumb()
+    {
+        PhotonNetwork.NickName = Field.text;
+        PhotonNetwork.JoinRandomOrCreateRoom();
     }
 
     public override void OnJoinRandomFailed(short returnCode, string message)
