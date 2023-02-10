@@ -338,10 +338,13 @@
 "Assets/Scripts/Disconnect.cs"
 "Assets/Scripts/FacingCamera.cs"
 "Assets/Scripts/GameSetup.cs"
+"Assets/Scripts/ListaIgraca.cs"
 "Assets/Scripts/Lobby.cs"
 "Assets/Scripts/PlayerMovement.cs"
 "Assets/Scripts/PlayerNickname.cs"
+"Assets/Scripts/Projectile.cs"
 "Assets/Scripts/Room.cs"
+"Assets/Scripts/Shooting.cs"
 "Assets/Scripts/ShowNick.cs"
 -langversion:9.0
 
